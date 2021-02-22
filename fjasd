@@ -1,0 +1,11 @@
+=> [32m#<Flat:0x00007f8ed85b0068[0m
+ id: [1;36mnil[0m,
+ name: [1;36mnil[0m,
+ address: [1;36mnil[0m,
+ available: [1;36mnil[0m,
+ price: [1;36mnil[0m,
+ capacity: [1;36mnil[0m,
+ user_id: [1;36mnil[0m,
+ bear_id: [1;36mnil[0m,
+ created_at: [1;36mnil[0m,
+ updated_at: [1;36mnil[0m[32m>[0m
