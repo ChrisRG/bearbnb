@@ -1,6 +1,16 @@
-<h1>Find your favorite bear in a flat near you</h1>
-<ul>
+<h1 class="text-center m-4">Find your favorite bear in a flat near you</h1>
+
   <% @flats.each do |flat|%>
-  <li><%= flat.name %> <%= flat.address %> Bear: <%= flat.bear.species %> <%= flat.bear.name %></li>
-  <% end %>
-</ul>
+  <div class="card-trip mb-4">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= flat.name %></h2>
+      <p>You will be welcomed by our wonderful <%= flat.bear.species %>bear <strong><%= flat.bear.name %></strong></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-large"/>
+  </div>
+</div>
+<% end %>
+
