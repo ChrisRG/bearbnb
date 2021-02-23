@@ -1,5 +1,5 @@
 class Bear < ApplicationRecord
-  SPECIES = ["brown", "grizzly", "polar"]
+  SPECIES = ["brown", "grizzly", "polar", "panda"]
   has_one :flat
 
   validates_presence_of :species, :description, :name
