@@ -1,0 +1,6 @@
+<h1>Find your favorite bear in a flat near you</h1>
+<ul>
+  <% @flats.each do %>
+  <li><%= flat.name %> <%= flat.address %></li>
+  <% end %>
+</ul>
