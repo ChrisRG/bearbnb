@@ -1,0 +1,9 @@
+<%= render 'shared/about-banner' %>
+
+<h2 style="text-align: center" class="mt-3">Meet your new companions!</h2>
+<% Bear.all.each do |bear| %>
+  <h5>Name: <strong><%= bear.name %></strong></h5>
+  <h5>Species: <%= bear.species %></h5>
+  <h5>Description: <%= bear.description %></h5>
+  <hr>
+<% end %>
