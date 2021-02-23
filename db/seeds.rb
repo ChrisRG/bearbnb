@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Flat.delete_all
+User.delete_all
+Bear.delete_all
+
 # Users
 User.delete_all
 User.create(email: "boris@gmail.com", password: "password")
@@ -23,11 +27,9 @@ Bear.delete_all
     description: Faker::Lorem.sentence(word_count: 10),
     name: Faker::Superhero.name
   )
-  bear_list << bear
 end
 
 # Flats
-Flat.delete_all
 5.times do 
   flat = Flat.new(
     name: Faker::TvShows::Simpsons.location, 
