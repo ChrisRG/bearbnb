@@ -5,7 +5,7 @@
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2><%= flat.name %></h2>
+      <h2><%= link_to flat.name, flat_path(flat) %></h2>
       <p>You will be welcomed by our wonderful <%= flat.bear.species %>bear <strong><%= flat.bear.name %></strong></p>
     </div>
     <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
