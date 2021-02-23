@@ -12,7 +12,6 @@ User.delete_all
 Bear.delete_all
 
 # Users
-User.delete_all
 User.create(email: "boris@gmail.com", password: "password")
 User.create(email: "amara@gmail.com", password: "password")
 User.create(email: "chris@gmail.com", password: "password")
@@ -20,7 +19,6 @@ User.create(email: "chris@gmail.com", password: "password")
 # Bear
 SPECIES = ["brown", "grizzly", "polar", "panda", "koala"]
 
-Bear.delete_all
 5.times do
   Bear.create(
     species: SPECIES.sample, 
@@ -42,4 +40,5 @@ bears = Bear.all.to_a
   flat.bear = bears.pop
   flat.user = User.all.sample
   flat.save
+
 end
