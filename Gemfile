@@ -66,3 +66,7 @@ gem 'devise'
 
 # Fake data for the seed
 gem 'faker'
+
+# Cloudinary for image storage
+gem 'cloudinary', '~> 1.16.0'
+
