@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_154241) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.text "description"
     t.boolean "available"
     t.integer "price"
     t.integer "capacity"
