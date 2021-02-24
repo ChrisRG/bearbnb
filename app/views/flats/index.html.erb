@@ -3,7 +3,7 @@
 
   <% @flats.each do |flat|%>
     <div class="card-trip mb-4">
-      <%= image_tag url_for(flat.photo) %>
+      <%= image_tag flat.photo %>
       <div class="card-trip-infos">
         <div>
           <h2><%= link_to flat.name, flat_path(flat) %></h2>
@@ -11,7 +11,7 @@
           <p>You will be welcomed by our wonderful <%= flat.bear.species %> bear <strong><%= flat.bear.name %></strong></p>
         </div>
         <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
-        <%= image_tag url_for(flat.bear.photo), class:"card-trip-user avatar-large" %>
+        <%= image_tag flat.bear.photo, class:"card-trip-user avatar-large" %>
       </div>
     </div>
   <% end %>

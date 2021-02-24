@@ -1,5 +1,5 @@
  <div class="card" style="width: 18rem;">
-  <%= image_tag url_for(@bear.photo), class: "card-img-top" %>
+  <%= image_tag @bear.photo.key, class: "card-img-top" %>
   <div class="card-body">
     <h5 class="card-title"><%= @bear.name %></h5>
     <h3><%= @bear.name %></h3>
