@@ -4,9 +4,17 @@
     <div class="card-product-infos">
       <h2><%= @flat.name %></h2>
       <p> Address: <%= @flat.address %> </p>
+      <p> Description: <%= @flat.description %> </p>
       <p> Avalable: <%= @flat.available %> </p>
       <p> Price: <%= @flat.price %>€ per night </p>
-      <p> Capacity: <%= @flat.capacity %> </p>
-      <%= link_to "Book flat", new_flat_booking_path(@flat) %>
+      <p class="mb-4"> Capacity: <%= @flat.capacity %> </p>
+      <%= simple_form_for [@flat, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit class: "btn btn-dark" %>
+      <% end %>
     </div>
+  </div>
 </div>
+
+
