@@ -1,11 +1,12 @@
-<div class="card-product">
-  <%= image_tag url_for(@flat.photo) %>
-  <div class="card-product-infos">
-    <h2><%= @flat.name %></h2>
-    <p> Address: <%= @flat.address %> </p>
-    <p> Avalable: <%= @flat.available %> </p>
-    <p> Price: <%= @flat.price %>€ per night </p>
-    <p> Capacity: <%= @flat.capacity %> </p>
-  </div>
+<div class="container">
+  <div class="card-product">
+    <%= image_tag url_for(@flat.photo) %>
+    <div class="card-product-infos">
+      <h2><%= @flat.name %></h2>
+      <p> Address: <%= @flat.address %> </p>
+      <p> Avalable: <%= @flat.available %> </p>
+      <p> Price: <%= @flat.price %>€ per night </p>
+      <p> Capacity: <%= @flat.capacity %> </p>
+      <%= link_to "Book flat", new_flat_booking_path(@flat) %>
+    </div>
 </div>
-

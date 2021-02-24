@@ -1,1 +1,15 @@
-<h2>Bookings index page</h2>
+
+<div class="container">
+  <% @bookings.each do |booking|%>
+  <div class="card-trip mb-4">
+    <img src="https://ca-times.brightspotcdn.com/dims4/default/739a122/2147483647/strip/true/crop/3240x2108+0+0/resize/840x547!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F0e%2F4f%2Faaab692f4d43bf79a4f51f304583%2Fla-photos-1staff-496739-me-monrovia-bear0a2-ik.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <p>Your booking is <strong><%= booking.status %></strong> from <%= booking.start_date %> to <%= booking.end_date %></p>
+      </div>
+
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-large"/>
+    </div>
+  </div>
+  <% end %>
+</div>
