@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = User.last
     @booking.status = 'pending'
     if @booking.save
-      redirect_to flat_path(@flat)
+      redirect_to bookings_path
     else
       render :new
     end
