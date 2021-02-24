@@ -1,1 +1,17 @@
-<h2>Bookings index page</h2>
+<h2>Bookings</h2>
+
+
+<% @bookings.each do |booking| %>
+<div class="card-trip mb-4">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <p><%= booking.start_date %></p>
+      <p><%= booking.end_date %></p>
+      <p><%= booking.status %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= booking.user_id %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-large"/>
+  </div>
+</div>
+<% end %>

@@ -1,11 +1,14 @@
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2><%= @flat.name %></h2>
-    <p> Address: <%= @flat.address %> </p>
-    <p> Avalable: <%= @flat.available %> </p>
-    <p> Price: <%= @flat.price %>€ per night </p>
-    <p> Capacity: <%= @flat.capacity %> </p>
+<div class="container">
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= @flat.name %></h2>
+      <p> Address: <%= @flat.address %> </p>
+      <p> Avalable: <%= @flat.available %> </p>
+      <p> Price: <%= @flat.price %>€ per night </p>
+      <p> Capacity: <%= @flat.capacity %> </p>
+      <%= link_to "Book flat", new_flat_booking_path(@flat) %>
+    </div>
   </div>
 </div>
 
