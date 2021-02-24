@@ -1,11 +1,17 @@
 <%= render 'shared/about-banner' %>
 
-<div class="container">
+<div class="container" style="margin-bottom: 50px">
   <h2 style="text-align: center" class="mt-3">Meet some potential companions!</h2>
-  <% Bear.all.each do |bear| %>
-    <h5>Name: <strong><%= bear.name %></strong></h5>
-    <h5>Species: <%= bear.species %></h5>
-    <h5>Description: <%= bear.description %></h5>
-    <hr>
-  <% end %>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px">
+    <% Bear.all.each do |bear| %>
+     <div class="card" style="width: 18rem;">
+      <%= image_tag url_for(bear.photo), class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= bear.name %></h5>
+        <p><%= bear.species %></p>
+        <p class="card-text"><%= bear.description %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
