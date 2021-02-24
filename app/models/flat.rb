@@ -1,7 +1,7 @@
 class Flat < ApplicationRecord
   belongs_to :user
   belongs_to :bear
-  has_many_attached :photo
+  has_one_attached :photo
 
   validates_presence_of :address, :name, :available, :price, :capacity
   validates_numericality_of :capacity, only_integer: true
