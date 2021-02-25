@@ -1,7 +1,7 @@
 <div class="container">
   <% @bookings.each do |booking|%>
   <div class="card-trip mb-4">
-   <%= image_tag url_for(booking.flat.photo) %>
+   <%= cl_image_tag booking.flat.photo.key %>
       <div class="card-trip-infos">
         <div>
           <h2><%= booking.flat.name %></h2>
@@ -9,7 +9,7 @@
           <p>We hope you're excited! <strong><%= booking.flat.bear.name %></strong> sure is!</p>
         </div>
         <h2 class="card-trip-pricing"><%= booking.flat.price %>€</h2>
-        <%= image_tag url_for(booking.flat.bear.photo), class:"card-trip-user avatar-large" %>
+        <%= cl_image_tag booking.flat.bear.photo.key, class:"card-trip-user avatar-large" %>
       </div>
     </div>
   <% end %>
