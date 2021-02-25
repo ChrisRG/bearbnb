@@ -51,8 +51,8 @@
   height: 100%;
   width: 450px;
   object-fit: cover;
-
-}
+  position: relative;
+  }
 
 .card-product h2 {
   font-size: 16px;
@@ -72,3 +72,11 @@
   padding: 16px;
 }
 
+.card-product-bear .avatar-bordered {
+  position: absolute;
+  left: 130px;
+  top: 75px;
+  width: 75px;
+  height: 75px;
+
+}
