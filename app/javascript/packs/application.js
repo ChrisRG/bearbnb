@@ -32,6 +32,13 @@ import { initUpdateNavbarOnScroll } from "../components/navbar";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
+  const navItems = document.querySelectorAll(".nav-link")
+  let pathname = window.location.pathname;
+  if (pathname === "/") {
+      navItems.forEach((item) => {
+        item.classList.add("nav-hidden");
+      });
+    }
   initUpdateNavbarOnScroll();
   initMapbox();
 });
