@@ -5,7 +5,7 @@
   <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px">
     <% Bear.all.each do |bear| %>
      <div class="card" style="width: 18rem;">
-      <%= image_tag url_for(bear.photo), class: "card-img-top" %>
+      <%= cl_image_tag bear.photo.key, class: "card-img-top" %>
       <div class="card-body">
         <h5 class="card-title"><%= bear.name %></h5>
         <p><%= bear.species %></p>

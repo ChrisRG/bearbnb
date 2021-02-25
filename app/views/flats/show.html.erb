@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-product">
-    <%= image_tag url_for(@flat.photo) %>
+    <%= cl_image_tag @flat.photo.key %>
     <div class="card-product-infos">
       <h2><%= @flat.name %></h2>
       <p> Address: <%= @flat.address %> </p>

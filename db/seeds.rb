@@ -1,7 +1,13 @@
+# For this seed we will be using:
+# - faker to generate names and addresses
+# - open-uri to fetch resources from Cloudinary
+
 require 'faker'
+require "open-uri"
+
+URL_BASE = "https://res.cloudinary.com/chrisrg/image/upload/v1614178302/"
 
 puts "==[ Seeding database ]=="
-
 puts "Deleting previous records..."
 Flat.delete_all
 User.delete_all
@@ -16,14 +22,16 @@ User.create(email: "chris@gmail.com", password: "password")
 puts "Users created."
 
 # Bear
+# Bear species are hard-coded, which also determines the image downloaded
+# and the description used via the hash.
 puts "Seeding bears. This may take a moment..."
 species = ["brown", "grizzly", "polar", "panda", "koala"]
 BEAR_PHOTOS = {
-  brown: 'app/assets/images/brown.jpg',
-  grizzly: 'app/assets/images/grizzly.jpg',
-  polar: 'app/assets/images/polar.jpg',
-  panda: 'app/assets/images/panda.jpg',
-  koala: 'app/assets/images/koala.jpg'
+  brown: '17z81dg15frpmhrcef94avjj2zct.jpg',
+  grizzly: 'gzwnp74e0uhmm5gotdi23u2emkpx.jpg',
+  polar: 'jblmdwevw9kk9arw1egscvzj9pye.jpg',
+  panda: 'gdxdofx0ql5a1n3f7l3hpe7rmuq5.jpg',
+  koala: 'aklwptc6q9xoje1q9b3wln2yqe7m.jpg'
 }
 
 DESCRIPTIONS = {
@@ -36,8 +44,8 @@ DESCRIPTIONS = {
 
 5.times do
   bear_species = species.pop
-  photo_path = BEAR_PHOTOS[bear_species.to_sym]
-  file = File.open(photo_path)
+  photo_path = "#{URL_BASE}#{BEAR_PHOTOS[bear_species.to_sym]}"
+  file = URI.open(photo_path)
   bear = Bear.create(
     species: bear_species.capitalize, 
     description: DESCRIPTIONS[bear_species.to_sym],
@@ -47,14 +55,16 @@ DESCRIPTIONS = {
 end
 puts "Bears created."
 
-# Flats
+# Flats 
+# Flat images are instead generated with an array of Cloudinary URLs.
+# Each path is popped off the array in order to ensure unique images.
 puts "Seeding flats. This may take a moment..."
 FLAT_PHOTOS = [
-  'app/assets/images/brownbear-flat.jpg',
-  'app/assets/images/cozy-apartment.jpg',
-  'app/assets/images/chill-flat.jpg',
-  'app/assets/images/Contemporary-Seattle-living-room.jpg',
-  'app/assets/images/POLAR-BEAR-flat.jpg'
+  '9sklkf28cw3sldecy3mviye2blop.jpg',
+  'xqed9wjybdrkfiu2q5vvqzmaa1xi.jpg',
+  'uh9a5yrhoich4rg1kyhomxki6m4y.jpg',
+  '5zovqn6yjrfnva5mjk8txl5ur24f.jpg',
+  'a6cstmi577p5i1imthr8eavhwxme.jpg'
 ]
 
 FLAT_DESC = [
@@ -67,8 +77,8 @@ FLAT_DESC = [
 
 bears = Bear.all.to_a
 5.times do 
-  photo_path = FLAT_PHOTOS.pop
-  file = File.open(photo_path)
+  photo_path = "#{URL_BASE}#{FLAT_PHOTOS.pop}"
+  file = URI.open(photo_path)
   flat = Flat.new(
     name: Faker::TvShows::Simpsons.location, 
     address: Faker::Address.street_address, 
@@ -83,4 +93,3 @@ bears = Bear.all.to_a
   flat.save
 end
 puts "Flats created. Seeding finished."
-
