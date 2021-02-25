@@ -17,6 +17,8 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/kibex/cklksgilw0i5r17lnxcpc0g9s",
+      center: [11.576124, 48.137154],
+      zoom: 9,
     });
 
     map.addControl(
