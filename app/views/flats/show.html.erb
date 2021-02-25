@@ -3,11 +3,16 @@
     <%= cl_image_tag @flat.photo.key %>
     <div class="card-product-infos">
       <h2><%= @flat.name %></h2>
-      <p> Address: <%= @flat.address %> </p>
-      <p> Description: <%= @flat.description %> </p>
-      <p> Avalable: <%= @flat.available %> </p>
-      <p> Price: <%= @flat.price %>€ per night </p>
-      <p class="mb-4"> Capacity: <%= @flat.capacity %> </p>
+      <p> <%= @flat.address %> </p>
+      <p> <%= @flat.description %> </p>
+      <p> <%= @flat.price %>€ per night </p>
+
+      <% if @flat.capacity == 1 %>
+        <p> <%= @flat.capacity %> guest </p>
+      <% else %>
+        <p class="mb-4"> <%= @flat.capacity %> guests </p>
+      <% end %>
+
       <%= simple_form_for [@flat, @booking] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
