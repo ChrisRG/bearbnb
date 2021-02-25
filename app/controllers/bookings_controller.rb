@@ -3,10 +3,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def new
-    @flat = Flat.find(params[:flat_id])
-    @booking = Booking.new
-  end
 
   def create
     @flat = Flat.find(params[:flat_id])
@@ -15,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = User.last
     @booking.status = 'pending'
     if @booking.save
-      redirect_to flat_path(@flat)
+      redirect_to bookings_path
     else
       render :new
     end
