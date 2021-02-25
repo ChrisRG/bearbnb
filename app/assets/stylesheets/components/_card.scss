@@ -45,13 +45,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .card-product img {
   height: 100%;
   width: 450px;
   object-fit: cover;
-  position: relative;
+
   }
 
 .card-product h2 {
@@ -74,9 +75,9 @@
 
 .card-product-bear .avatar-bordered {
   position: absolute;
-  left: 130px;
-  top: 75px;
+  left: 10px;
+  top: 10px;
   width: 75px;
   height: 75px;
-
+  bottom: 0;
 }
