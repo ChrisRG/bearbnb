@@ -16,7 +16,7 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= booking.flat.name %></h2>
-          <p>Your booking is <strong>confirmed</strong> from <%= booking.start_date %> to <%= booking.end_date %>!</p>
+          <p>Your booking is <strong>confirmed</strong> from <%= booking.start_date.to_s(:long) %> to <%= booking.end_date.to_s(:long) %>!</p>
           <p>We hope you're excited! <strong><%= booking.flat.bear.name %></strong> sure is!</p>
         </div>
         <h2 class="card-trip-pricing"><%= booking.flat.price %>€</h2>
