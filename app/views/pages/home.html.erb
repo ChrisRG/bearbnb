@@ -1,10 +1,51 @@
 <%= render 'shared/banner' %>
-<h2 class="text-center my-4">Bebear of the bear and breakfasts near you!</h2>
-<div class="container d-flex justify-content-center">
-  <div class="mt-4">
+<h2 class="text-center my-4">
+  Bebear of a new style of bed and breakfast!
+</h2>
+<div class="text-center">
+  <a class="btn btn-info" href="/about">Meet the bears</a>
+</div>
+<div class="container" style="margin: 0 auto">
+  <div class="mt-4 d-flex justify-content-center" style="margin-bottom: 20px">
   <%= render 'shared/carousel'%>
   </div>
 </div>
-  <footer class="fixed-bottom">
-    <%= render 'shared/footer' %>
-  </footer>
+<div class="container" style="margin-top: 90px">
+  <div style="text-align: center">
+    <h2 class="text-center mb-3">
+      See what others have been saying!
+    </h2>
+    <div class="card mb-4 px-4" style="width:50%; margin: 0 auto; padding-top: 15px">
+      <p>"Amazing experience! I only lost two friends!"<p>
+      <p>              —Greg from Kentucky</p>
+    </div>
+    <div class="card mb-4 px-4" style="width:50%; margin: 0 auto; padding-top: 15px">
+      <p>"Would definitely try again! Just make sure to bring lots of salmon!"<p>
+      <p>              —Tina from Karlsruhe</p>
+    </div>
+    <a class="btn btn-info mb-3" href="/about">Meet the bears!</a>
+    <h2 class="text-center mb-3">
+      Top flat near you! Bearably nice!
+    </h2>
+    <div class="d-flex justify-content-center">
+      <% flat = Flat.all.first %>
+      <div class="card-trip mb-4 text-center" style="width: 50%">
+        <%= cl_image_tag flat.photo.key %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to flat.name, flat_path(flat) %></h2>
+            <p><%= flat.description %></p>
+            <p>You will be welcomed by our wonderful <%= flat.bear.species %> bear <strong><%= flat.bear.name %></strong></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+          <%= cl_image_tag flat.bear.photo.key, class:"card-trip-user avatar-large" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <%= render 'shared/footer' %>
+</footer>
