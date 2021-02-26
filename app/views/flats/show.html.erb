@@ -13,16 +13,11 @@
         <p class="mb-4"> <%= @flat.capacity %> guests </p>
       <% end %>
 
-      <%# <%= simple_form_for [@flat, @booking] do |f| %1> %>
-      <%#   <%= f.input :start_date %1> %>
-      <%#   <%= f.input :end_date %1> %>
-      <%#   <%= f.submit class: "btn btn-outline-info" %1> %>
-      <%# <% end %1> %>
       <div id='flat-booking-dates' data-unavailable="<%= @flat.unavailable_dates.to_json %>">
          <%= simple_form_for([@flat, @booking]) do |f| %>
              <%= f.input :start_date, as: :string, type: :text, input_html: {class: "datepicker"} %>
              <%= f.input :end_date, as: :string, type: :text, input_html: {class: "datepicker"} %>
-             <%= f.submit "Book", class: "btn btn-primary" %>
+             <%= f.submit "Book", class: "btn btn-info" %>
           <% end %>
        </div>
     </div>
