@@ -10,6 +10,7 @@
   </div>
 
   <% @bookings.each do |booking|%>
+  <%= link_to flat_path(booking.flat.id), class: 'card-links' do%>
   <div class="card-trip mb-4">
    <%= cl_image_tag booking.flat.photo.key %>
       <div class="card-trip-infos">
@@ -22,5 +23,6 @@
         <%= cl_image_tag booking.flat.bear.photo.key, class:"card-trip-user avatar-large" %>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
