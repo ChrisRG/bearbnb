@@ -3,8 +3,8 @@ class Flat < ApplicationRecord
   belongs_to :bear
   has_many :bookings
   has_one_attached :photo
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode, if: :will_save_change_to_address?
 
   validates_presence_of :address, :name, :available, :price, :capacity
   validates_numericality_of :capacity, only_integer: true
