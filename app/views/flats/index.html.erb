@@ -11,6 +11,7 @@
               <div style="max-width: 80%">
                 <h2><%= flat.name %></h2>
                 <p><%= flat.description %></p>
+                <p><%= rand(10)%> days without incident! </p>
               </div>
               <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
               <%= cl_image_tag flat.bear.photo.key, class:"card-trip-user avatar-large" %>
