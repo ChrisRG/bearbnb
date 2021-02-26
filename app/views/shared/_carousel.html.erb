@@ -8,7 +8,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= cl_image_tag Flat.first.photo.key, class: "d-block w-100", style: "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))" %>
+      <%= cl_image_tag Flat.first.photo.key, class: "d-block w-100", style: "min-height: 550px"%>
     <div class="carousel-caption d-none d-md-block">
       <h5><%= Flat.first.name %></h5>
       <p><%= Flat.first.description %></p>
@@ -16,7 +16,7 @@
   </div>
   <% Flat.all.reject { |flat| flat == Flat.first }.each do |flat| %>
   <div class="carousel-item">
-    <%= cl_image_tag flat.photo.key, class: "d-block w-100", style: "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))" %>
+    <%= cl_image_tag flat.photo.key, class: "d-block w-100", style: "min-height: 550px" %>
     <div class="carousel-caption d-none d-md-block">
       <h5><%= flat.name %></h5>
       <p><%= flat.description %></p>
