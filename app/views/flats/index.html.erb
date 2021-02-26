@@ -8,10 +8,9 @@
           <div class="card-trip mb-4">
             <%= cl_image_tag flat.photo.key %>
             <div class="card-trip-infos">
-              <div>
+              <div style="max-width: 80%">
                 <h2><%= flat.name %></h2>
                 <p><%= flat.description %></p>
-                <p>You will be welcomed by our wonderful <%= flat.bear.species %> bear <strong><%= flat.bear.name %></strong></p>
               </div>
               <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
               <%= cl_image_tag flat.bear.photo.key, class:"card-trip-user avatar-large" %>
