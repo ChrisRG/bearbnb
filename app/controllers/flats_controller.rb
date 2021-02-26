@@ -6,7 +6,8 @@ class FlatsController < ApplicationController
       {
         lat: flat.latitude,
         lng: flat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+        image_url: helpers.asset_url('logo.png')
       }
     end
   end

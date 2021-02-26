@@ -85,7 +85,9 @@ bears = Bear.all.to_a
     available: true,
     price: (5..500).to_a.sample,
     capacity: (1..10).to_a.sample,
-    description: FLAT_DESC.pop
+    description: FLAT_DESC.pop,
+    latitude: rand(47.5..48.1),
+    longitude: rand(11.0..11.5)
   )
   flat.bear = bears.pop
   flat.user = User.all.sample
