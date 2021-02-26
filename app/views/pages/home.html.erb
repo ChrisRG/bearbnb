@@ -29,18 +29,19 @@
     </h2>
     <div class="d-flex justify-content-center">
       <% flat = Flat.all.first %>
-      <div class="card-trip mb-4 text-center" style="width: 50%">
-        <%= cl_image_tag flat.photo.key %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= link_to flat.name, flat_path(flat) %></h2>
-            <p><%= flat.description %></p>
-            <p>You will be welcomed by our wonderful <%= flat.bear.species %> bear <strong><%= flat.bear.name %></strong></p>
+      <%= link_to flat_path(flat), class: "card-links d-flex justify-content-center" do %>
+        <div class="card-trip mb-4 text-center" style="width: 50%">
+          <%= cl_image_tag flat.photo.key %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= flat.name %></h2>
+              <p><%= flat.description %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+            <%= cl_image_tag flat.bear.photo.key, class:"card-trip-user avatar-large" %>
           </div>
-          <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
-          <%= cl_image_tag flat.bear.photo.key, class:"card-trip-user avatar-large" %>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 

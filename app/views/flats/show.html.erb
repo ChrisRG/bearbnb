@@ -12,7 +12,8 @@
       <% else %>
         <p class="mb-4"> <%= @flat.capacity %> guests </p>
       <% end %>
-
+      <p>You will be welcomed by our wonderful <%= @flat.bear.species %> bear <strong><%= @flat.bear.name %></strong>!</p>
+      <hr>
       <div id='flat-booking-dates' data-unavailable="<%= @flat.unavailable_dates.to_json %>">
          <%= simple_form_for([@flat, @booking]) do |f| %>
              <%= f.input :start_date, as: :string, type: :text, input_html: {class: "datepicker"} %>

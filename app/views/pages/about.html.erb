@@ -6,9 +6,9 @@
     <% Bear.all.each do |bear| %>
      <div class="card" style="width: 18rem;">
       <%= cl_image_tag bear.photo.key, class: "card-img-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= bear.name %></h5>
-        <p><%= bear.species %></p>
+      <div class="card-body" style="color: #685634;">
+        <h4 class="card-title"><%= bear.name %></h5>
+        <p><%= bear.species %> bear</p>
         <p class="card-text"><%= bear.description %></p>
       </div>
     </div>
