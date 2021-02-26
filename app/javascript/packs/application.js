@@ -28,6 +28,9 @@ import "bootstrap";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initUpdateNavbarOnScroll } from "../components/navbar";
 
+import flatpickr from "flatpickr"
+import "flatpickr/dist/flatpickr.min.css"
+
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
@@ -39,6 +42,7 @@ document.addEventListener("turbolinks:load", () => {
         item.classList.add("nav-hidden");
       });
     }
+  flatpickr(".datepicker", {})
   initUpdateNavbarOnScroll();
   initMapbox();
 });
