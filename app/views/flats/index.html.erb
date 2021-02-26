@@ -4,18 +4,20 @@
   <div class="d-flex justify-content-center" >
     <div class="cards">
       <% @flats.each do |flat|%>
-        <div class="card-trip mb-4">
-          <%= cl_image_tag flat.photo.key %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= link_to flat.name, flat_path(flat) %></h2>
-              <p><%= flat.description %></p>
-              <p>You will be welcomed by our wonderful <%= flat.bear.species %> bear <strong><%= flat.bear.name %></strong></p>
+        <%= link_to flat_path(flat), class: "card-links" do %>
+          <div class="card-trip mb-4">
+            <%= cl_image_tag flat.photo.key %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= flat.name %></h2>
+                <p><%= flat.description %></p>
+                <p>You will be welcomed by our wonderful <%= flat.bear.species %> bear <strong><%= flat.bear.name %></strong></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+              <%= cl_image_tag flat.bear.photo.key, class:"card-trip-user avatar-large" %>
             </div>
-            <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
-            <%= cl_image_tag flat.bear.photo.key, class:"card-trip-user avatar-large" %>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
 
